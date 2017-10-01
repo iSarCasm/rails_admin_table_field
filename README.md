@@ -1,28 +1,42 @@
 # RailsAdminTableField
-Short description and motivation.
+Supplies Rails Admin with view-partial alternative for Nested Attributes relations.
+Changes Native Tabs implementation to Table.
 
-## Usage
-How to use my plugin.
+# Usage
+## Add to Gemfile:
+`gem 'rails_admin_table_field', git: 'https://github.com/iSarCasm/rails_admin_table_field'`
 
-## Installation
-Add this line to your application's Gemfile:
-
+## Inside Models
+For edit:
 ```ruby
-gem 'rails_admin_table_field'
+field :hotel_rooms do
+  render do
+    bindings[:view].render(
+      partial: 'table_edit',
+      locals: {
+        field: self,
+        form: bindings[:form],
+        table_headers: ['Amount', 'Room Type', 'Adult', 'Adult supp', 'Child', 'Child supp', 'Infant', 'Infant supp', 'Senior', 'Senior supp']
+      }
+    )
+  end
+end
+```
+For view:
+```ruby
+field :hotel_rooms do
+  pretty_value do
+    bindings[:view].render(
+      partial: 'rails_admin/table_show',
+      locals: {
+        objects: bindings[:object].hotel_rooms,
+        table_headers: ['Amount', 'Room Type', 'Adult', 'Adult supp', 'Child', 'Child supp', 'Infant', 'Infant supp', 'Senior', 'Senior supp'],
+        methods: [:amount, :room_type, :adult, :adult_supp, :child, :child_supp, :infant, :infant_supp, :senior, :senior_supp]
+      }
+    )
+  end
+end
 ```
 
-And then execute:
-```bash
-$ bundle
-```
-
-Or install it yourself as:
-```bash
-$ gem install rails_admin_table_field
-```
-
-## Contributing
-Contribution directions go here.
-
-## License
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+## To change field render inside Table
+Add file to `app/views/rails_admin/main/in_table/%_PARTIAL_NAME%`
