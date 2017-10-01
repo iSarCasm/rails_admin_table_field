@@ -1,0 +1,3 @@
+module RailsAdminTableField
+  # Your code goes here...
+end
