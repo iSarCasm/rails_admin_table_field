@@ -39,4 +39,4 @@ end
 ```
 
 ## To change field render inside Table
-Add file to `app/views/rails_admin/main/in_table/%_PARTIAL_NAME%`
+Add file to `app/views/rails_admin/main/in_table/%_PARTIAL_NAME_%`
