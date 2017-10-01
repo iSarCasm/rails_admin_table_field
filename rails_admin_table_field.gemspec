@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = RailsAdminTableField::VERSION
   s.authors     = ["SarCasm"]
   s.email       = ["sarcasm008@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of RailsAdminTableField."
-  s.description = "TODO: Description of RailsAdminTableField."
+  s.homepage    = "https://github.com/iSarCasm/rails_admin_table_field"
+  s.summary     = "Adds Table view of Nested Models inside Rails Admin (instead of tabs)"
+  s.description = "Adds Table view of Nested Models inside Rails Admin (instead of tabs)"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
