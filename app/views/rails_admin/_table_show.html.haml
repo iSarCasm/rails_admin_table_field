@@ -1,0 +1,16 @@
+.table-wrapper.table-wrapper-narrow
+  %table#tab_logic.table.table-bordered.table-hover.table-small-text.margin-top-3
+    %thead
+      %tr
+        %th
+        - table_headers.each do |header|
+          %th.text-center= header
+    %tbody.js-insertable
+      - objects.each do |obj|
+        %tr
+          %td
+            = link_to rails_admin.show_path(model_name: obj.class, id: obj.id), {target: 'blank'} do
+              link
+          - methods.each do |m|
+            %td
+              = obj.send(m).to_s
