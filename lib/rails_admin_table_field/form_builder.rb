@@ -1,3 +1,10 @@
+module RailsAdminTableField
+  def self.lol
+    "123"
+  end
+end
+
+
 RailsAdmin::FormBuilder.class_eval do
   def generate_for_table_edit(options = {})
     without_field_error_proc_added_div do
