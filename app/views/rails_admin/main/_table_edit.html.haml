@@ -1,5 +1,5 @@
 .table-wrapper.table-wrapper-narrow
-  %table#tab_logic{class: "table table-bordered table-hover table-small-text #{css}", style: "#{style}"}
+  %table#tab_logic{class: "table table-bordered table-hover table-small-text #{css || = ''}", style: "#{style || = ''}"}
     %thead
       %tr
         - table_headers.each do |header|
