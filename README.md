@@ -16,7 +16,11 @@ field :hotel_rooms do
       locals: {
         field: self,
         form: bindings[:form],
-        table_headers: ['Amount', 'Room Type', 'Adult', 'Adult supp', 'Child', 'Child supp', 'Infant', 'Infant supp', 'Senior', 'Senior supp']
+        table_headers: ['Amount', 'Room Type', 'Adult', 'Adult supp', 'Child', 'Child supp', 'Infant', 'Infant supp', 'Senior', 'Senior supp'],
+        style: 'width: auto;',
+        css: 'container',
+        links_style: 'some style for links',
+        links_css: 'classes for links'
       }
     )
   end
@@ -31,7 +35,9 @@ field :hotel_rooms do
       locals: {
         objects: bindings[:object].hotel_rooms,
         table_headers: ['Amount', 'Room Type', 'Adult', 'Adult supp', 'Child', 'Child supp', 'Infant', 'Infant supp', 'Senior', 'Senior supp'],
-        methods: [:amount, :room_type, :adult, :adult_supp, :child, :child_supp, :infant, :infant_supp, :senior, :senior_supp]
+        methods: [:amount, :room_type, :adult, :adult_supp, :child, :child_supp, :infant, :infant_supp, :senior, :senior_supp],
+        style: 'width: auto;',
+        css: 'container',
       }
     )
   end
