@@ -1,10 +1,14 @@
 # RailsAdminTableField
 Supplies Rails Admin with view-partial alternative for Nested Attributes relations.
 Changes Native Tabs implementation to Table.
+![Preview](https://i.imgur.com/ZVHu0A6.png)
 
-# Usage
-## Add to Gemfile:
+## Usage
+### Installation
+#### Add to Gemfile:
 `gem 'rails_admin_table_field', git: 'https://github.com/iSarCasm/rails_admin_table_field'`
+#### Add to `app/assets/javascripts/rails_admin/custom/ui.js`
+`//= require table-field`
 
 ## Inside Models
 For edit:
@@ -46,3 +50,4 @@ end
 
 ## To change field render inside Table
 Add file to `app/views/rails_admin/main/in_table/%_PARTIAL_NAME_%`
+example (https://github.com/iSarCasm/rails_admin_table_field/blob/master/app/views/rails_admin/main/in_table/_form_filtering_select.html.haml)
